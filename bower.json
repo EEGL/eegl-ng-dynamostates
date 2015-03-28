@@ -1,0 +1,32 @@
+{
+  "name": "eegl-ng-dynamostates",
+  "version": "0.1.0",
+  "homepage": "https://github.com/EEGL/eegl-ng-dynamostates",
+  "authors": [
+    "Balazs Szabo <balazs@eegl.me>"
+  ],
+  "description": "Dyanmic routes for Angular UI Router",
+  "main": "./eegl-ng-dynamostates.js",
+  "dependencies": {
+    "angular": ">= 1.3.8",
+    "angular-ui-router": ">= 0.2.13"
+  },
+  "moduleType": [
+    "angularjs"
+  ],
+  "keywords": [
+    "angular",
+    "state",
+    "route",
+    "ui-bootstrap",
+    "eegl"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
