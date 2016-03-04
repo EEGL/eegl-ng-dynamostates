@@ -9,10 +9,11 @@ Supports custom data.
   controller: 'homeCtr',
   templateUrl: '/templates/home.html',
   data: {
+    // any custom data that's needed
     slug: 'home',
     title: 'Home',
-    seoDescription: '',
-    seoKeywords: ''
+    description: '',
+    keywords: ''
   }
 }]
 ```
@@ -38,12 +39,12 @@ angular.module('myApp', [
     'ui.router',
     'eegl-ng-dynamostates'
   ])
-  .config(function(routerProvider) {
-    routerProvider.setCollection( arrayOfObjects )
+  .config(function(eeglRouterProvider) {
+    eeglRouterProvider.setCollection( arrayOfObjects )
   })
-  .controller('MainController', function ($scope, router) {
+  .controller('MainController', function ($scope, eeglRouter) {
     $scope.reload = function() {
-      router.setUpRoutes()
+      eeglRouter.setUpRoutes()
     }
   })
 ```
