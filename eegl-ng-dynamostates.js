@@ -5,14 +5,16 @@
    * eegl-ng-dynamostates
    *
 
-   * Version: 0.1.2
+   * Version: 0.1.3
    * License: MIT
 
    * To Do:
    *  add config interface to default values
    */
 
-  angular.module('eegl-ng-dynamostates', [])
+  angular.module('eegl-ng-dynamostates', [
+    'ui.router'
+  ])
     .provider('eeglRouter', function ($stateProvider) {
 
       var routeCollections
@@ -68,4 +70,4 @@
     .run(function (eeglRouter) {
       eeglRouter.setUpRoutes()
     })
-})()
+})();
