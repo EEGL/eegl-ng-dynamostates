@@ -5,7 +5,7 @@
    * eegl-ng-dynamostates
    *
 
-   * Version: 0.1.3
+   * Version: 0.2.0
    * License: MIT
 
    * To Do:
@@ -23,27 +23,8 @@
         var type = Function.prototype.call.bind( Object.prototype.toString )
 
         function addRoute(_state) {
-          if (!$state.get( _state.state ) && _state.state) {
-            var _newState = {}
-            if( !_state.state ) { return }
-            _newState.url = '/' + _state.state
-            if( _state.url ) {
-              _newState.url = _state.url
-            }
-            if( _state.controller ) {
-              _newState.controller = _state.controller
-            }
-            if( _state.template ) {
-              _newState.template = _state.template
-            }
-            if( _state.templateUrl ) {
-              _newState.templateUrl = _state.templateUrl
-            }
-            if( _state.data ) {
-              _newState.data = _state.data
-            }
-
-            $stateProvider.state(_state.slug, _newState)
+          if (_state.name && !$state.get( _state.name ) && _state.state ) {
+            $stateProvider.state(_state.name, _state.state)
           }
         }
         return {

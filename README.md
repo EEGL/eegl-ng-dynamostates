@@ -1,19 +1,17 @@
 #eegl-ng-dynamostates
 
-Dynimac states for UI Router, loaded from a JS array of objects / JSON file.
-Supports custom data.
+Dynamically loading states for UI Router, from a JS array of objects / JSON file.
+
+## Format
 
 ```js
 [{
-  state: 'home',
-  controller: 'homeCtr',
-  templateUrl: '/templates/home.html',
-  data: {
-    // any custom data that's needed
-    slug: 'home',
-    title: 'Home',
-    description: '',
-    keywords: ''
+  name: 'home', // /state name
+  state: { // this object gets passed to $stateProvider.state()
+    controller: 'homeCtr',
+    controllerAs: 'vm',
+    templateUrl: '/templates/home.html',
+    data: {}
   }
 }]
 ```
