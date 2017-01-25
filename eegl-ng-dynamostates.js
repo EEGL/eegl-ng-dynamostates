@@ -28,7 +28,10 @@
           }
         }
         return {
-          setUpRoutes: function () {
+          setUpRoutes: function ( routes ) {
+            if (routes) {
+              routeCollections = routes
+            }
             // Load dynamic routes
             if( type( routeCollections ) === '[object Object]' ) {
               for (var _key in routeCollections) {

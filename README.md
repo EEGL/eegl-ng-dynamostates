@@ -11,7 +11,8 @@ Dynamically loading states for UI Router, from a JS array of objects / JSON file
     controller: 'homeCtr',
     controllerAs: 'vm',
     templateUrl: '/templates/home.html',
-    data: {}
+    data: {},
+    ...
   }
 }]
 ```
@@ -30,7 +31,7 @@ Add a `<script>` to your `index.html`:
 <script src="/bower_components/eegl-ng-dynamostates/eegl-ng-dynamostates.js"></script>
 ```
 
-In your application controller:
+Set up your states in your application config:
 
 ```js
 angular.module('myApp', [
@@ -44,6 +45,24 @@ angular.module('myApp', [
     $scope.reload = function() {
       eeglRouter.setUpRoutes()
     }
+  })
+```
+
+Or you can also add them in a controller:
+
+```js
+angular.module('myApp', [
+    'ui.router',
+    'eegl-ng-dynamostates'
+  ])
+  .controller('MainController', function ($scope, $http, eeglRouter) {
+    // Example with a promise
+    $http({method: 'GET', url: '/api'})
+      .then(
+        function (res) {
+          eeglRouter.setUpRoutes(res)
+        }
+      )
   })
 ```
 
